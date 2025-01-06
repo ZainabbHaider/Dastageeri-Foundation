@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-100 text-gray-100 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+input, select, textarea {
+  @apply bg-dark-200 border-dark-300 text-gray-100 !important;
+}
+
+input::placeholder {
+  @apply text-gray-400;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-accent-500 hover:bg-accent-600 text-white transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-dark-200 hover:bg-dark-300 text-white transition-colors duration-200;
+}
