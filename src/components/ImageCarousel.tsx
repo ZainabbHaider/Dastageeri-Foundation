@@ -8,7 +8,7 @@ const images = [
   },
   {
     url: 'src/3.jpg',
-    caption: 'Ramzan Food Drives'
+    caption: 'Iftar & Food Drives'
   },
   {
     url: 'src/41.jpg',
@@ -17,6 +17,14 @@ const images = [
   {
     url: 'src/5.jpg',
     caption: 'Providing Undernourished'
+  },
+  {
+    url: 'src/8.jpg',
+    caption: 'Food and Ration Services'
+  },
+  {
+    url: 'src/9.jpg',
+    caption: 'Building a Masjid'
   }
 ];
 
@@ -43,7 +51,7 @@ export default function ImageCarousel() {
   };
 
   return (
-    <div className="relative h-[500px] w-full overflow-hidden">
+    <div className="relative h-[600px] w-full overflow-hidden">
       <div
         className="absolute inset-0 transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

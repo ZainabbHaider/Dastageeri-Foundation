@@ -4,7 +4,7 @@ const news = [
   {
     title: 'Build Our Future',
     date: 'March 15, 2024',
-    description: 'Responding to recent natural disasters with immediate aid and support.',
+    description: 'Partnering with institutions, we’re currently educating 20 underprivileged students, giving them the tools for a brighter future. We continue to raise funds to expand this initiative and provide access to quality education to more deserving students.',
     image: 'src/4.jpg'
   },
   {
@@ -16,7 +16,7 @@ const news = [
   {
     title: 'Ramzan Ration Drives',
     date: 'March 10, 2024',
-    description: 'Expanding our reach with a new facility to support underprivileged students.',
+    description: 'Our flagship initiative has provided monthly rations to over 1,000 families, ensuring that no one goes hungry during the holy month of Ramzan. Every package is carefully curated to meet all nutritional needs and provide comfort to those who need it the most.',
     image: 'src/1.jpg'
   }
 ];
@@ -43,10 +43,10 @@ export default function NewsSection() {
                 alt={item.title}
               />
               <div className="p-6">
-                <div className="flex items-center text-sm text-gray-500">
+                {/* <div className="flex items-center text-sm text-gray-500">
                   <Calendar className="h-4 w-4 mr-2" />
                   {item.date}
-                </div>
+                </div> */}
                 <h3 className="mt-2 text-xl font-semibold text-gray-900">
                   {item.title}
                 </h3>
