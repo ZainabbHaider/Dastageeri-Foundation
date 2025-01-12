@@ -1,4 +1,5 @@
-import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -11,21 +12,18 @@ export default function Footer() {
               <span className="text-white text-2xl font-bold">Dastageeri</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Empowering communities and changing lives through sustainable development
-              and humanitarian assistance.
+            Together, let’s make a difference. One life, one day at a time.
+
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-emerald-500">
+              <a href="https://www.facebook.com/dastigeerifoundation/" className="text-gray-400 hover:text-emerald-500">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-emerald-500">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-emerald-500">
+              <a href="https://www.instagram.com/dastigeerifoundation/" className="text-gray-400 hover:text-emerald-500">
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="#" className="text-gray-400 hover:text-emerald-500">
-                <Youtube className="h-6 w-6" />
+                <Linkedin className="h-6 w-6" />
               </a>
             </div>
           </div>
@@ -33,11 +31,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500">Our Programs</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500">Get Involved</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500">Donate</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-emerald-500">Contact</a></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-emerald-500">About Us</Link></li>
+              <li><Link to="/volunteer" className="text-gray-400 hover:text-emerald-500">Get Involved</Link></li>
+              <li><Link to="/donate" className="text-gray-400 hover:text-emerald-500">Donate</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-emerald-500">Contact</Link></li>
             </ul>
           </div>
 

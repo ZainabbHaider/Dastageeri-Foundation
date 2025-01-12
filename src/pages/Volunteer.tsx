@@ -1,4 +1,4 @@
-import { Calendar, Users, Heart, ArrowRight } from 'lucide-react';
+import { Calendar, Users, Heart, ArrowRight, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
 
 const opportunities = [
@@ -34,10 +34,37 @@ export default function Volunteer() {
     availability: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent default form submission
+
+    try {
+      const response = await fetch('http://localhost:5000/volunteer/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Send the form data as JSON
+      });
+
+      if (response.ok) {
+        setIsModalOpen(true); // Show the modal
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          interests: '',
+          availability: '',
+        }); // Reset the form
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to submit the form: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -45,6 +72,10 @@ export default function Volunteer() {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
   };
 
   return (
@@ -73,9 +104,9 @@ export default function Volunteer() {
                   <p>Commitment: {opportunity.commitment}</p>
                   <p>Location: {opportunity.location}</p>
                 </div>
-                <button className="mt-4 flex items-center text-emerald-400 hover:text-emerald-300">
+                {/* <button className="mt-4 flex items-center text-emerald-400 hover:text-emerald-300">
                   Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
+                </button> */}
               </div>
             ))}
           </div>
@@ -147,6 +178,7 @@ export default function Volunteer() {
                   <option value="education">Education Support</option>
                   <option value="food">Food Distribution</option>
                   <option value="events">Event Organization</option>
+                  <option value='any'>General Volunteer</option>
                 </select>
               </div>
 
@@ -177,6 +209,24 @@ export default function Volunteer() {
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg shadow-lg p-8 w-96 text-center">
+            <CheckCircle className="mx-auto h-16 w-16 text-green-500" />
+            <h2 className="text-2xl font-bold text-gray-800 mt-4">Registration Successful!</h2>
+            <p className="text-gray-600 mt-2">
+              Thank you for registering as a volunteer. We will get in touch with you soon.
+            </p>
+            <button
+              onClick={closeModal}
+              className="mt-6 px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 focus:ring focus:ring-emerald-500"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
