@@ -18,14 +18,14 @@ const images = [
     url: 'src/5.jpg',
     caption: 'Providing Undernourished'
   },
-  {
-    url: 'src/8.jpg',
-    caption: 'Food and Ration Services'
-  },
-  {
-    url: 'src/9.jpg',
-    caption: 'Building a Masjid'
-  }
+  // {
+  //   url: 'src/8.jpg',
+  //   caption: 'Food and Ration Services'
+  // },
+  // {
+  //   url: 'src/9.jpg',
+  //   caption: 'Building a Masjid'
+  // }
 ];
 
 export default function ImageCarousel() {

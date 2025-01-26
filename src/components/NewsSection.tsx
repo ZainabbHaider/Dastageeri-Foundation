@@ -1,27 +1,43 @@
+import { useNavigate } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
 
 const news = [
   {
     title: 'Build Our Future',
     date: 'March 15, 2024',
-    description: 'Partnering with institutions, we’re currently educating 20 underprivileged students, giving them the tools for a brighter future. We continue to raise funds to expand this initiative and provide access to quality education to more deserving students.',
+    description: 'Partnering with reputable institutions, we’re currently empowering 20 underprivileged students with quality',
     image: 'src/4.jpg'
   },
   {
     title: 'Build a Masjid',
     date: 'March 5, 2024',
-    description: 'Over 1000 families benefited from our recent health camp.',
+    description: 'Building a masjid is more than constructing a place of worship—it is creating a space for community,',
     image: 'src/2.jpg'
   },
   {
     title: 'Ramzan Ration Drives',
     date: 'March 10, 2024',
-    description: 'Our flagship initiative has provided monthly rations to over 1,000 families, ensuring that no one goes hungry during the holy month of Ramzan. Every package is carefully curated to meet all nutritional needs and provide comfort to those who need it the most.',
+    description: 'Our flagship initiative has successfully provided monthly rations to over 1,000 families, ensuring that no',
     image: 'src/1.jpg'
   }
 ];
 
 export default function NewsSection() {
+  const navigate = useNavigate();
+
+  const handleReadMore = (sectionId: string) => {
+    navigate('/blog'); // Navigate to the blog page
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const yOffset = -100; // Adjust this value based on your header or padding
+        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 0); // Wait for navigation to complete
+  };
+  
+
   return (
     <div className="bg-dark-200 py-16">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,17 +52,14 @@ export default function NewsSection() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {news.map((item, index) => (
-            <div key={index} className="bg-white overflow-hidden shadow rounded-lg">
+            <div key={index} className="bg-white overflow-hidden shadow rounded-lg hover:scale-110 duration-100 hover:-translate-y-1">
               <img
                 className="h-48 w-full object-cover"
                 src={item.image}
                 alt={item.title}
               />
               <div className="p-6">
-                {/* <div className="flex items-center text-sm text-gray-500">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {item.date}
-                </div> */}
+                
                 <h3 className="mt-2 text-xl font-semibold text-gray-900">
                   {item.title}
                 </h3>
@@ -54,13 +67,13 @@ export default function NewsSection() {
                   {item.description}
                 </p>
                 <div className="mt-4">
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => handleReadMore(`section${index + 1}`)}
                     className="text-emerald-600 hover:text-emerald-500 flex items-center"
                   >
                     Read more
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -70,3 +83,5 @@ export default function NewsSection() {
     </div>
   );
 }
+
+

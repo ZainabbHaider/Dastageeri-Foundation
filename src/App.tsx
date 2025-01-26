@@ -8,6 +8,7 @@ import Zakat from './pages/Zakat';
 import Volunteer from './pages/Volunteer';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import Blog from './pages/blog';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ function AppRoutes() {
           <Route path="/zakat" element={<Zakat />} />
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </main>
       <Footer />

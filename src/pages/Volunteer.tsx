@@ -90,27 +90,7 @@ export default function Volunteer() {
           </p>
         </div>
 
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-white mb-8">Current Opportunities</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {opportunities.map((opportunity, index) => (
-              <div key={index} className="bg-dark-200 rounded-lg shadow-lg p-6">
-                <div className="inline-flex items-center justify-center p-3 bg-emerald-900/20 rounded-full">
-                  <opportunity.icon className="h-6 w-6 text-emerald-500" />
-                </div>
-                <h3 className="mt-4 text-lg font-medium text-white">{opportunity.title}</h3>
-                <p className="mt-2 text-gray-400">{opportunity.description}</p>
-                <div className="mt-4 text-sm text-gray-400">
-                  <p>Commitment: {opportunity.commitment}</p>
-                  <p>Location: {opportunity.location}</p>
-                </div>
-                {/* <button className="mt-4 flex items-center text-emerald-400 hover:text-emerald-300">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </button> */}
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
         <div className="mt-16">
           <div className="bg-dark-200 rounded-lg shadow-lg p-8">

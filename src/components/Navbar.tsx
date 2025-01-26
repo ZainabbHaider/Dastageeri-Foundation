@@ -23,9 +23,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-300 hover:text-accent-400">Home</Link>
             <Link to="/about" className="text-gray-300 hover:text-accent-400">About</Link>
+            <Link to="/blog" className="text-gray-300 hover:text-accent-400">Projects</Link>
             <Link to="/zakat" className="text-gray-300 hover:text-accent-400">Zakat Calculator</Link>
             <Link to="/volunteer" className="text-gray-300 hover:text-accent-400">Get Involved</Link>
             <Link to="/contact" className="text-gray-300 hover:text-accent-400">Contact</Link>
+            
             <Link to="/donate">
               <button className="bg-accent-500 text-white px-4 py-2 rounded-md hover:bg-accent-600 transition duration-300">
                 Donate Now

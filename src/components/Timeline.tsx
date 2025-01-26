@@ -20,11 +20,10 @@ export default function Timeline() {
   ];
 
   return (
-    <div className="py-16 bg-dark-200">
+    <div className="py-16 bg-dark-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Our Journey</h2>
-          <p className="mt-4 text-xl text-emerald-500">A timeline of growth and impact</p>
         </div>
 
         <div className="relative">

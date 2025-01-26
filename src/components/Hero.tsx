@@ -44,7 +44,7 @@ export default function Hero() {
               <div className="lg:w-1/2 lg:h-full ">
                 <img
                   className="w-full h-full object-cover"
-                  src="src/logo.png"
+                  src="src/AID EASE HARBOUR2.png"
                   alt="Volunteers helping in community"
                 />
               </div>

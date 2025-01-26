@@ -1,4 +1,5 @@
 import { Users, Award, Target } from "lucide-react";
+import Timeline from '../components/Timeline';
 
 export default function About() {
   return (
@@ -67,7 +68,7 @@ export default function About() {
             </div>
             <div className="flex justify-center">
               <img
-                src="src/cover2.png"
+                src="src/3.jpg"
                 alt="Team working together"
                 className="rounded-lg w-full h-auto max-w-xxl"
               />
@@ -76,7 +77,7 @@ export default function About() {
         </div>
 
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-white text-center mb-8">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">
             Our Impact
           </h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -113,9 +114,9 @@ export default function About() {
             </div>
           </div>
         </div>
-
+            <Timeline />
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-white mb-8">Our Team</h2>
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">Our Team</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((member) => (
               <div
