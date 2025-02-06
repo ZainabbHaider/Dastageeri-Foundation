@@ -22,9 +22,6 @@ export default function Footer() {
               <a href="https://www.instagram.com/dastigeerifoundation/" className="text-gray-400 hover:text-emerald-500">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-emerald-500">
-                <Linkedin className="h-6 w-6" />
-              </a>
             </div>
           </div>
 
@@ -32,26 +29,22 @@ export default function Footer() {
             <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-emerald-500">About Us</Link></li>
-              <li><Link to="/volunteer" className="text-gray-400 hover:text-emerald-500">Get Involved</Link></li>
+              <li><Link to="/blog" className="text-gray-400 hover:text-emerald-500">Projects</Link></li>
               <li><Link to="/donate" className="text-gray-400 hover:text-emerald-500">Donate</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-emerald-500">Contact</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-emerald-500">Get Involved</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="h-6 w-6 text-emerald-500 mr-2" />
-                <span className="text-gray-400">123 Charity Street, City, Country</span>
-              </li>
               <li className="flex items-center">
                 <Phone className="h-6 w-6 text-emerald-500 mr-2" />
-                <span className="text-gray-400">+1 234 567 890</span>
+                <span className="text-gray-400">+92-3330252800</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-6 w-6 text-emerald-500 mr-2" />
-                <span className="text-gray-400">info@dastageeri.org</span>
+                <span className="text-gray-400">dastigeerifoundation@gmail.com</span>
               </li>
             </ul>
           </div>

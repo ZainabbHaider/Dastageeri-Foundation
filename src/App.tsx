@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Donate from './pages/Donate';
 import Zakat from './pages/Zakat';
-import Volunteer from './pages/Volunteer';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import Blog from './pages/blog';
@@ -22,7 +21,6 @@ function AppRoutes() {
           <Route path="/about" element={<About />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/zakat" element={<Zakat />} />
-          <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>

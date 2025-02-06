@@ -25,7 +25,7 @@ router.post('/submit-form', async (req, res) => {
   try {
     const mailOptions = {
       from: 'Dastigeeri Foundation',
-      to: 'mahwishahmed14@gmail.com', // Email address to receive form submissions
+      to: 'zainabhaider354@gmail.com', // Email address to receive form submissions
       subject: 'New Volunteer Registration',
       html: `
         <html>

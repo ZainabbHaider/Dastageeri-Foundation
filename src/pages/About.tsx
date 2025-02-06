@@ -115,7 +115,7 @@ export default function About() {
           </div>
         </div>
             <Timeline />
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">Our Team</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((member) => (
@@ -142,7 +142,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
