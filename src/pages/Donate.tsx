@@ -1,182 +1,55 @@
-import { useState } from 'react';
-import { Heart, CreditCard, Calendar } from 'lucide-react';
-
-const amounts = [1000, 2500, 5000, 10000, 15000, 25000];
+import { Banknote, Info, Heart } from 'lucide-react';
 
 export default function Donate() {
-  const [donationData, setDonationData] = useState({
-    amount: '',
-    customAmount: '',
-    cause: '',
-    frequency: 'one-time',
-    currency: 'PKR'
-  });
-
-  const handleAmountSelect = (amount: number) => {
-    setDonationData(prev => ({
-      ...prev,
-      amount: amount.toString(),
-      customAmount: ''
-    }));
-  };
-
-  const handleCustomAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDonationData(prev => ({
-      ...prev,
-      amount: '',
-      customAmount: e.target.value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  
-    const donationDetails = {
-      amount: donationData.customAmount || donationData.amount,
-      currency: donationData.currency,
-      frequency: donationData.frequency,
-      paymentMethod: 'jazzcash' // or 'easypaisa' based on user selection
-    };
-  
-    // Send donation details to backend to initiate payment
-    fetch('/donate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(donationDetails),
-    })
-      .then(response => response.json())
-      .then(data => {
-        // Handle payment redirection or success response
-        console.log('Payment response:', data);
-        if (data.paymentUrl) {
-          // Redirect the user to the payment URL
-          window.location.href = data.paymentUrl;
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  };
-  
-
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-dark-100">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
-            Make a Donation
-          </h1>
-          <p className="mt-4 text-xl text-gray-400">
-            Your generosity can change lives
-          </p>
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-dark-100 min-h-screen">
+      <div className="max-w-3xl mx-auto text-center">
+        <h1 className="text-4xl font-extrabold text-white sm:text-5xl mb-4">
+          Make a Donation
+        </h1>
+        <p className="text-lg text-gray-400 mb-10">
+          Your support helps us continue our mission. Please use the following bank details to donate.
+        </p>
+
+        <div className="bg-dark-200 rounded-2xl shadow-lg p-8 text-left text-gray-200 space-y-6">
+          <div className="flex items-center space-x-3">
+            <Banknote className="h-6 w-6 text-emerald-500" />
+            <h2 className="text-xl font-semibold">Bank Account Information</h2>
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <span className="block text-sm text-gray-400">Account Title</span>
+              <span className="text-lg font-medium text-white">Asad Hussain</span>
+            </div>
+            <div>
+              <span className="block text-sm text-gray-400">Account Number</span>
+              <span className="text-lg font-medium text-white">3284383000000441</span>
+            </div>
+            <div>
+              <span className="block text-sm text-gray-400">Bank Name</span>
+              <span className="text-lg font-medium text-white">Faysal Bank</span>
+            </div>
+            <div>
+              <span className="block text-sm text-gray-400">IBAN</span>
+              <span className="text-lg font-medium text-white">PK39FAYS3284383000000441</span>
+            </div>
+            {/* <div>
+              <span className="block text-sm text-gray-400">Branch Code</span>
+              <span className="text-lg font-medium text-white">1234</span>
+            </div> */}
+          </div>
+
+          <div className="flex items-start space-x-2 text-sm text-gray-400 pt-4 border-t border-dark-300">
+            <Info className="w-4 h-4 mt-1 text-gray-500" />
+            <span>
+              After making a donation, please email your receipt to <a href="mailto:dastigeerifoundation@gmail.com" className="text-emerald-400 underline">dastigeerifoundation@gmail.com</a> for confirmation.
+            </span>
+          </div>
         </div>
 
-
-        <div className="mt-16">
-          <div className="bg-dark-200 rounded-lg shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-14">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-6">
-                  Select Amount
-                </label>
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-                  {amounts.map((amount) => (
-                    <button
-                      key={amount}
-                      type="button"
-                      className={`px-4 py-5 border rounded-md text-sm font-medium transition-colors
-                        ${donationData.amount === amount.toString()
-                          ? 'bg-emerald-600 text-white border-emerald-600'
-                          : 'bg-dark-300 text-gray-300 border-dark-400 hover:bg-dark-400'
-                        }`}
-                      onClick={() => handleAmountSelect(amount)}
-                    >
-                      PKR {amount}
-                    </button>
-                  ))}
-                </div>
-                <div className="mt-4">
-                  <label htmlFor="customAmount" className="sr-only">
-                    Custom Amount
-                  </label>
-                  <div className="relative rounded-md shadow-sm">
-                    
-                    <input
-                      type="number"
-                      name="customAmount"
-                      id="customAmount"
-                      className="focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 pr-12 border-dark-300 rounded-md"
-                      placeholder="Custom Amount"
-                      value={donationData.customAmount}
-                      onChange={handleCustomAmount}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-4">
-                  Donation Frequency
-                </label>
-                <div className="grid grid-cols-2 gap-4">
-                  <button
-                    type="button"
-                    className={`flex items-center justify-center px-4 py-2 border rounded-md text-sm font-medium
-                      ${donationData.frequency === 'one-time'
-                        ? 'bg-emerald-600 text-white border-emerald-600'
-                        : 'bg-dark-300 text-gray-300 border-dark-400 hover:bg-dark-400'
-                      }`}
-                    onClick={() => setDonationData(prev => ({ ...prev, frequency: 'one-time' }))}
-                  >
-                    <CreditCard className="h-5 w-5 mr-2" />
-                    One-time
-                  </button>
-                  <button
-                    type="button"
-                    className={`flex items-center justify-center px-4 py-2 border rounded-md text-sm font-medium
-                      ${donationData.frequency === 'monthly'
-                        ? 'bg-emerald-600 text-white border-emerald-600'
-                        : 'bg-dark-300 text-gray-300 border-dark-400 hover:bg-dark-400'
-                      }`}
-                    onClick={() => setDonationData(prev => ({ ...prev, frequency: 'monthly' }))}
-                  >
-                    <Calendar className="h-5 w-5 mr-2" />
-                    Monthly
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="currency" className="block text-sm font-medium text-gray-300 mb-2">
-                  Currency
-                </label>
-                <select
-                  id="currency"
-                  name="currency"
-                  className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-dark-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 rounded-md"
-                  value={donationData.currency}
-                  onChange={(e) => setDonationData(prev => ({ ...prev, currency: e.target.value }))}
-                >
-                  <option value="GBP">PKR - Pakistani Rupee</option>
-                  <option value="USD">USD - US Dollar</option>
-                  <option value="EUR">EUR - Euro</option>
-                  <option value="GBP">GBP - British Pound</option>
-                </select>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-              >
-                <Heart className="h-5 w-5 mr-2" />
-                Donate Now
-              </button>
-            </form>
-
-            
-          </div>
+        <div className="mt-10 flex justify-center">
+          <Heart className="h-8 w-8 text-emerald-500" />
         </div>
       </div>
     </div>

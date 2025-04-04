@@ -44,7 +44,7 @@ export default function ZakatSummary({ totalAssets, totalLiabilities }: ZakatSum
           </div>
           {netWorth < NISAB_THRESHOLD && (
             <p className="text-sm text-gray-400 mt-2">
-              No Zakat is due as net worth is below Nisab threshold (${NISAB_THRESHOLD})
+              No Zakat is due as net worth is below Nisab threshold (${NISAB_THRESHOLD}: Equaivalent to 87.48 grams of gold)
             </p>
           )}
         </div>

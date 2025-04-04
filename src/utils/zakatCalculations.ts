@@ -1,4 +1,4 @@
-export const NISAB_THRESHOLD = 5000; // Example threshold in USD
+export const NISAB_THRESHOLD = 7750; // Example threshold in USD
 export const ZAKAT_RATE = 0.025; // 2.5%
 
 export interface Assets {
