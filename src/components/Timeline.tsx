@@ -28,7 +28,7 @@ export default function Timeline() {
 
         <div className="relative">
           {/* Horizontal line */}
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-dark-300" />
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-dark-100" />
 
           <div className="relative flex justify-between items-start">
             {milestones.map((milestone, index) => (

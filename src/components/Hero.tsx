@@ -1,51 +1,45 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hero from "../AID EASE HARBOUR2.png"
+import hero from "../AID EASE HARBOUR2.png";
+
 export default function Hero() {
   return (
     <div className="relative bg-dark-200 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-8 bg-dark-200 sm:pb-16 md:pb-20 lg:pb-2 xl:pb-20">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-38 xl:mt-8">
-            <div className="lg:flex lg:items-center lg:justify-between">
-              {/* Left Section - Text */}
-              <div className="sm:text-center lg:text-left lg:w-1/2 lg:mr-20">
-                <h1 className="text-4xl tracking-tight font-extrabold text-white-900 sm:text-5xl md:text-6xl">
+          <main className="mt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
+              {/* Text Section */}
+              <div className="text-center lg:text-left lg:w-1/2 space-y-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
                   <span className="block">Transforming Lives</span>
                   <span className="block text-emerald-600">One Day at a Time</span>
                 </h1>
-                <p className="mt-3 text-base text-white-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  At Dastigeeri Foundation, we believe small acts of kindness can spark big change. With compassion and a vision to uplift, we’re on a mission to make a difference—one life, every day. Together, we’re creating ripples of hope and transformation across communities.
+                <p className="text-base sm:text-lg md:text-xl text-gray-300">
+                  At Dastigeeri Foundation, we believe small acts of kindness can spark big change. With compassion and a vision to uplift, we’re on a mission to make a difference—one life, every day.
                 </p>
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <a
-                      href="#donate"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 md:py-4 md:text-lg md:px-10"
-                    >
-                      <Link to="/donate">
-                        Donate Now
-                      </Link>
-                    </a>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <a
-                      href="#volunteer"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-emerald-700 bg-emerald-100 hover:bg-emerald-200 md:py-4 md:text-lg md:px-10"
-                    >
-                      <Link to="/volunteer">
-                        Volunteer 
-                      </Link>
-                    </a>
-                  </div>
+                <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mt-4">
+                  <Link
+                    to="/donate"
+                    className="px-6 py-3 rounded-md bg-emerald-600 text-white font-medium hover:bg-emerald-700 text-center"
+                  >
+                    Donate Now
+                  </Link>
+                  <Link
+                    to="/volunteer"
+                    className="px-6 py-3 rounded-md bg-emerald-100 text-emerald-700 font-medium hover:bg-emerald-200 text-center"
+                  >
+                    Volunteer
+                  </Link>
                 </div>
               </div>
-              {/* Right Section - Image */}
-              <div className="lg:w-1/2 lg:h-full ">
+
+              {/* Image Section */}
+              <div className="w-full lg:w-1/2">
                 <img
-                  className="w-full h-full object-cover"
                   src={hero}
                   alt="Volunteers helping in community"
+                  className="w-full h-auto rounded-lg shadow-lg object-cover"
                 />
               </div>
             </div>
