@@ -1,23 +1,29 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import img1 from '../1.jpg';
+import img3 from '../3.jpg';
+import img41 from '../41.jpg';
+import img5 from '../5.jpg';
 
 const images = [
   {
-    url: 'src/1.jpg',
+    url: img1,
     caption: 'Food and Ration Services'
   },
   {
-    url: 'src/3.jpg',
+    url: img3,
     caption: 'Iftar & Food Drives'
   },
   {
-    url: 'src/41.jpg',
+    url: img41,
     caption: 'Supporting Education Initiatives'
   },
   {
-    url: 'src/5.jpg',
+    url: img5,
     caption: 'Providing Undernourished'
   },
+];
+
   // {
   //   url: 'src/8.jpg',
   //   caption: 'Food and Ration Services'
@@ -26,7 +32,7 @@ const images = [
   //   url: 'src/9.jpg',
   //   caption: 'Building a Masjid'
   // }
-];
+// ];
 
 export default function ImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);

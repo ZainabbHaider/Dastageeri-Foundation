@@ -1,4 +1,10 @@
 import { motion } from "framer-motion";
+import first from "../4.jpg";
+import second from "../12.jpg";
+import third from "../2.jpg";
+import fourth from "../13.jpg";
+import fifth from "../1.jpg";
+import sixth from "../14.jpg";
 
 export default function BlogPage() {
   return (
@@ -23,7 +29,7 @@ export default function BlogPage() {
           id="section1"
           title="Build Our Future"
           content={`Partnering with reputable institutions, we’re currently empowering 20 underprivileged students with quality education, equipping them with the tools and knowledge to build a brighter future. This initiative not only provides academic support but also fosters essential life skills, mentorship, and career guidance to ensure holistic development. Our vision is to transform lives through education, and we remain steadfast in our commitment to expanding this program. We are actively raising funds and seeking partnerships to extend this opportunity to many more deserving students, breaking the cycle of poverty and creating a ripple effect of positive change in their communities. Together, we can bridge the educational gap and build a more equitable society.`}
-          images={["src/4.jpg", "src/12.jpg"]}
+          images={[first, second]}
         />
 
         {/* Section 2 */}
@@ -31,7 +37,7 @@ export default function BlogPage() {
           id="section2"
           title="Build a Masjid"
           content={`Building a masjid is more than constructing a place of worship—it is creating a space for community, reflection, and spiritual growth. A masjid serves as a cornerstone of Islamic life, offering a sanctuary for prayer, education, and communal activities. Our vision is to construct a masjid that goes beyond prayer, incorporating facilities such as classrooms for Quranic studies, spaces for interfaith dialogue, and areas for social and charitable initiatives. Every element of the masjid is designed with care, ensuring accessibility, sustainability, and a warm atmosphere for all. Together, we can establish a beacon of faith and service that will benefit generations to come, earning ongoing rewards in this life and the hereafter.`}
-          images={["src/2.jpg", "src/13.jpg"]}
+          images={[third, fourth]}
         />
 
         {/* Section 3 */}
@@ -39,7 +45,7 @@ export default function BlogPage() {
           id="section3"
           title="Ramzan Ration Drives"
           content={`Our flagship initiative has successfully provided monthly rations to over 1,000 families, ensuring that no one goes hungry during the holy month of Ramzan. Each package is thoughtfully curated to meet essential nutritional needs, including staples such as grains, pulses, and cooking essentials, along with items that bring a sense of comfort and dignity to families during this sacred time. This effort extends beyond food distribution, fostering a sense of community and hope for those facing challenging circumstances. As we continue to grow, we aim to reach even more families, ensuring that the spirit of giving and compassion lights up every home in need.`}
-          images={["src/1.jpg", "src/14.jpg"]}
+          images={[fifth, sixth]}
         />
       </div>
     </div>

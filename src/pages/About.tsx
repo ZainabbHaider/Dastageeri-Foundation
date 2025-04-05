@@ -1,6 +1,6 @@
 import { Users, Award, Target } from "lucide-react";
 import Timeline from '../components/Timeline';
-
+import first from "../3.jpg"
 export default function About() {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-dark-100">
@@ -68,7 +68,7 @@ export default function About() {
             </div>
             <div className="flex justify-center">
               <img
-                src="src/3.jpg"
+                src={first}
                 alt="Team working together"
                 className="rounded-lg w-full h-auto max-w-xxl"
               />

@@ -1,24 +1,27 @@
 import { useNavigate } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
+import first from "../4.jpg"
+import second from "../2.jpg"
+import third from "../1.jpg"
 
 const news = [
   {
     title: 'Build Our Future',
     date: 'March 15, 2024',
     description: 'Partnering with reputable institutions, we’re currently empowering 20 underprivileged students with quality',
-    image: 'src/4.jpg'
+    image: first
   },
   {
     title: 'Build a Masjid',
     date: 'March 5, 2024',
     description: 'Building a masjid is more than constructing a place of worship—it is creating a space for community,',
-    image: 'src/2.jpg'
+    image: second
   },
   {
     title: 'Ramzan Ration Drives',
     date: 'March 10, 2024',
     description: 'Our flagship initiative has successfully provided monthly rations to over 1,000 families, ensuring that no',
-    image: 'src/1.jpg'
+    image: third
   }
 ];
 

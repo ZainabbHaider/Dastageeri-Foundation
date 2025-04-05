@@ -1,6 +1,7 @@
 import { Menu, X, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
             <img
-                src="src/logo.png" // Replace with the correct path to your logo
+                src={logo} // Replace with the correct path to your logo
               
                 className="h-8 w-8"
               />

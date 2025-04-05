@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import hero from "../AID EASE HARBOUR2.png"
 export default function Hero() {
   return (
     <div className="relative bg-dark-200 overflow-hidden">
@@ -44,7 +44,7 @@ export default function Hero() {
               <div className="lg:w-1/2 lg:h-full ">
                 <img
                   className="w-full h-full object-cover"
-                  src="src/AID EASE HARBOUR2.png"
+                  src={hero}
                   alt="Volunteers helping in community"
                 />
               </div>
