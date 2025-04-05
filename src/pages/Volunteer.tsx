@@ -155,10 +155,10 @@ export default function Volunteer() {
                   required
                 >
                   <option value="">Select an area</option>
-                  <option value="education">Education Support</option>
-                  <option value="food">Food Distribution</option>
-                  <option value="events">Event Organization</option>
-                  <option value='any'>General Volunteer</option>
+                  <option value="Education Support">Education Support</option>
+                  <option value="Food Distribution">Food Distribution</option>
+                  <option value="Event Organization">Event Organization</option>
+                  <option value='General Volunteer'>General Volunteer</option>
                 </select>
               </div>
 
