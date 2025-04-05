@@ -2,6 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
+
 // import logo from 'src\logo.png';
 const router = express.Router();
 
@@ -13,8 +16,8 @@ router.use(cors());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'zainabhaider354@gmail.com', // replace with your email
-    pass: 'sjyx eylz dwer xyvz', // replace with your app-specific password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 

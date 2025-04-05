@@ -40,7 +40,7 @@ export default function Volunteer() {
     e.preventDefault(); // Prevent default form submission
 
     try {
-      const response = await fetch('http://localhost:5000/volunteer/submit-form', {
+      const response = await fetch('https://dastageeri-foundation.netlify.app/volunteer/submit-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
