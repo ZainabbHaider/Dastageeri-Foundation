@@ -26,7 +26,7 @@ export default function Hero() {
                     Donate Now
                   </Link>
                   <Link
-                    to="/volunteer"
+                    to="/contact"
                     className="px-6 py-3 rounded-md bg-emerald-100 text-emerald-700 font-medium hover:bg-emerald-200 text-center"
                   >
                     Volunteer
