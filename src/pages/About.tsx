@@ -7,7 +7,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
-            About Dastageeri Foundation
+            About Dastigeeri Foundation
           </h1>
           {/* <p className="mt-4 text-xl text-gray-400">
             Building a better world through compassion and sustainable change

@@ -20,7 +20,7 @@ export default function BlogPage() {
         >
           <h1 className="text-5xl font-extrabold text-white sm:text-6xl">Projects</h1>
           <p className="text-gray-300 text-lg mt-4">
-            Dastageeri Foundation has made a significant impact through various initiatives and programs, empowering communities and bringing sustainable change.
+            Dastigeeri Foundation has made a significant impact through various initiatives and programs, empowering communities and bringing sustainable change.
           </p>
         </motion.div>
 

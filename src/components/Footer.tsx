@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <Heart className="h-8 w-8 text-emerald-500" />
-              <span className="text-white text-2xl font-bold">Dastageeri</span>
+              <span className="text-white text-2xl font-bold">Dastigeeri</span>
             </div>
             <p className="text-gray-400 mb-6">
             Together, let’s make a difference. One life, one day at a time.
@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
  */}
           <div className="mt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Dastageeri Foundation. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Dastigeeri Foundation. All rights reserved.</p>
           </div>
         </div>
       </div>

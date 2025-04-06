@@ -17,7 +17,7 @@ export default function Navbar() {
               
                 className="h-8 w-8"
               />
-              <span className="font-bold text-xl text-white">Dastageeri Foundation</span>
+              <span className="font-bold text-xl text-white">Dastigeeri Foundation</span>
             </Link>
           </div>
 
