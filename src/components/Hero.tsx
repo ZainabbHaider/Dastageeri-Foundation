@@ -39,7 +39,7 @@ export default function Hero() {
                 <img
                   src={hero}
                   alt="Volunteers helping in community"
-                  className="w-full h-auto rounded-lg shadow-lg object-cover"
+                  className="w-full h-auto rounded-lg object-cover"
                 />
               </div>
             </div>
