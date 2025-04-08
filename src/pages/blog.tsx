@@ -101,6 +101,7 @@ function Section({ id, title, content, images }: SectionProps) {
             <motion.img
               key={index}
               src={src}
+              loading="lazy"
               alt={`${title} ${index + 1}`}
               className="rounded-lg shadow-lg object-cover h-64 w-full hover:scale-105 transition-transform duration-300"
               whileHover={{ scale: 1.05 }}

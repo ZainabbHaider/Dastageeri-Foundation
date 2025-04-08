@@ -116,6 +116,7 @@ export default function ImageCarousel() {
               <img
                 src={image.url}
                 alt={image.caption}
+                loading='lazy'
                 className="h-full w-full object-cover object-center"
                 // className="h-full w-full object-contain bg-dark-100"
 

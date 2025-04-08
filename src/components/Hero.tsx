@@ -39,6 +39,7 @@ export default function Hero() {
                 <img
                   src={hero}
                   alt="Volunteers helping in community"
+                  loading='lazy'
                   className="w-full h-auto rounded-lg object-cover"
                 />
               </div>
