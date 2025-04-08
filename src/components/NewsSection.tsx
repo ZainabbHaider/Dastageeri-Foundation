@@ -1,29 +1,33 @@
 import { useNavigate } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
-import first from "../4.jpg"
+import first from "../12.jpg"
 import second from "../2.jpg"
-import third from "../1.jpg"
+import third from "../17.jpg"
 
 const news = [
   {
+    id: 'ramzan-ration',
+    title: 'Ramzan Ration Drives',
+    date: 'March 10, 2024',
+    description: 'Our flagship initiative has successfully provided monthly rations to over 1,000 families, ensuring that no',
+    image: third
+  },
+  {
+    id: 'build-future',
     title: 'Build Our Future',
     date: 'March 15, 2024',
     description: 'Partnering with reputable institutions, we’re currently empowering 20 underprivileged students with quality',
     image: first
   },
   {
+    id: 'build-masjid',
     title: 'Build a Masjid',
     date: 'March 5, 2024',
     description: 'Building a masjid is more than constructing a place of worship—it is creating a space for community,',
     image: second
   },
-  {
-    title: 'Ramzan Ration Drives',
-    date: 'March 10, 2024',
-    description: 'Our flagship initiative has successfully provided monthly rations to over 1,000 families, ensuring that no',
-    image: third
-  }
 ];
+
 
 export default function NewsSection() {
   const navigate = useNavigate();
@@ -71,7 +75,7 @@ export default function NewsSection() {
                 </p>
                 <div className="mt-4">
                   <button
-                    onClick={() => handleReadMore(`section${index + 1}`)}
+                    onClick={() => handleReadMore(item.id)}
                     className="text-emerald-600 hover:text-emerald-500 flex items-center"
                   >
                     Read more

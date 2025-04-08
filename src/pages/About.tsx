@@ -1,7 +1,70 @@
+import { useState } from "react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+
 import { Users, Award, Target } from "lucide-react";
-import Timeline from '../components/Timeline';
-import first from "../3.jpg"
+import Timeline from "../components/Timeline";
+
+// Static imports of images
+import img1 from "../18.jpg";
+import img2 from "../31.jpg";
+import img3 from "../3.jpg";
+import img4 from "../29.jpg";
+import img5 from "../30.jpg";
+import img6 from "../17.jpg";
+
 export default function About() {
+  const images = [img1, img2, img3, img4, img5, img6];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      initial: 0,
+      loop: true,
+      slides: {
+        perView: 1,
+        spacing: 16,
+      },
+      slideChanged(s) {
+        setCurrentSlide(s.track.details.rel);
+      },
+    },
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let mouseOver = false;
+
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 1500); // Change slide every 4 seconds
+        }
+
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+      },
+    ]
+  );
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-dark-100">
       <div className="max-w-7xl mx-auto">
@@ -9,13 +72,11 @@ export default function About() {
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
             About Dastigeeri Foundation
           </h1>
-          {/* <p className="mt-4 text-xl text-gray-400">
-            Building a better world through compassion and sustainable change
-          </p> */}
         </div>
 
         <div className="mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Story Text */}
             <div>
               <h2 className="text-3xl font-bold text-white">Our Story</h2>
               <p className="mt-4 text-gray-300">
@@ -32,10 +93,7 @@ export default function About() {
                 It started humbly during Ramzan, as we delivered ration packs to
                 100 deserving families. What began as a heartfelt initiative has
                 grown into a movement of empathy and action, impacting over
-                <span className="text-emerald-500 font-bold">
-                  {" "}
-                  10,000 individuals
-                </span>{" "}
+                <span className="text-emerald-500 font-bold"> 10,000 individuals</span>{" "}
                 across Pakistan. From providing meals to the hungry, to offering
                 education to the underserved, to standing strong with
                 communities in times of disaster—our work is driven by one
@@ -66,83 +124,84 @@ export default function About() {
                 Together, let’s make a difference. One life, one day at a time.
               </p>
             </div>
-            <div className="flex justify-center">
-              <img
-                src={first}
-                alt="Team working together"
-                className="rounded-lg w-full h-auto max-w-xxl"
-              />
+
+            {/* Image Carousel */}
+            <div className="relative">
+              <div ref={sliderRef} className="keen-slider rounded-xl overflow-hidden">
+                {images.map((img, i) => (
+                  <div
+                    key={i}
+                    className="keen-slider__slide flex justify-center items-center"
+                  >
+                    <img
+                      src={img}
+                      alt={`Slide ${i + 1}`}
+                      className="rounded-xl w-full h-auto object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Navigation Buttons */}
+              <div className="absolute inset-y-0 left-0 flex items-center">
+                <button
+                  onClick={() => instanceRef.current?.prev()}
+                  className="bg-white-200 hover:bg-gray-400 text-white p-2 rounded-full shadow-lg"
+                >
+                  ‹
+                </button>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center">
+                <button
+                  onClick={() => instanceRef.current?.next()}
+                  className="bg-white-200 hover:bg-gray-400 text-white p-2 rounded-full shadow-lg"
+                >
+                  ›
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Impact Section */}
         <div className="mt-16">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">
+          <h2 className="text-4xl font-extrabold text-white text-center mb-12">
             Our Impact
           </h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <div className="text-center bg-dark-200 p-6 rounded-lg">
-              <div className="inline-flex items-center justify-center p-3 bg-emerald-900/20 rounded-full">
-                <Users className="h-8 w-8 text-emerald-500" />
-              </div>
-              <h3 className="mt-4 text-lg font-medium text-white">
-                10K+ Lives Impacted
-              </h3>
-              <p className="mt-2 text-gray-400">
-                Through various programs and initiatives
-              </p>
-            </div>
-            <div className="text-center bg-dark-200 p-6 rounded-lg">
-              <div className="inline-flex items-center justify-center p-3 bg-emerald-900/20 rounded-full">
-                <Target className="h-8 w-8 text-emerald-500" />
-              </div>
-              <h3 className="mt-4 text-lg font-medium text-white">
-                3+ Projects
-              </h3>
-              <p className="mt-2 text-gray-400">
-                Successfully completed across regions
-              </p>
-            </div>
-            <div className="text-center bg-dark-200 p-6 rounded-lg">
-              <div className="inline-flex items-center justify-center p-3 bg-emerald-900/20 rounded-full">
-                <Award className="h-8 w-8 text-emerald-500" />
-              </div>
-              <h3 className="mt-4 text-lg font-medium text-white">4+ Years</h3>
-              <p className="mt-2 text-gray-400">
-                Of dedicated community service
-              </p>
-            </div>
-          </div>
-        </div>
-            <Timeline />
-        {/* <div className="mt-16">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8">Our Team</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((member) => (
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
+            {[
+              {
+                icon: Users,
+                title: "10K+ Lives Impacted",
+                subtitle: "Through various programs and initiatives",
+              },
+              {
+                icon: Target,
+                title: "3+ Projects",
+                subtitle: "Successfully completed across regions",
+              },
+              {
+                icon: Award,
+                title: "4+ Years",
+                subtitle: "Of dedicated community service",
+              },
+            ].map(({ icon: Icon, title, subtitle }, index) => (
               <div
-                key={member}
-                className="bg-dark-200 rounded-lg shadow-lg overflow-hidden"
+                key={index}
+                className="text-center bg-dark-200 p-8 rounded-2xl shadow-lg"
               >
-                <img
-                  src={`https://images.unsplash.com/photo-${
-                    1500648767791 + member
-                  }-00dce5e783cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80`}
-                  alt="Team member"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg font-medium text-white">
-                    Team Member {member}
-                  </h3>
-                  <p className="text-emerald-400">Position</p>
-                  <p className="mt-2 text-gray-400">
-                    Dedicated to making a positive impact in our communities.
-                  </p>
+                <div className="inline-flex items-center justify-center p-6 bg-emerald-900/20 rounded-full">
+                  <Icon className="h-12 w-12 text-emerald-500" />
                 </div>
+                <h3 className="mt-6 text-xl font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-gray-400 text-base">{subtitle}</p>
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
+
+        {/* Timeline */}
+        <Timeline />
       </div>
     </div>
   );

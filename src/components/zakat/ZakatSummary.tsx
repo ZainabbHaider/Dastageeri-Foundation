@@ -18,19 +18,19 @@ export default function ZakatSummary({ totalAssets, totalLiabilities }: ZakatSum
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-400">Total Assets</span>
             <span className="font-medium text-white">
-              {"$" + totalAssets.toFixed(2)}
+              {"PKR " + totalAssets.toFixed(2)}
             </span>
           </div>
           <div className="flex items-center justify-between text-sm mt-2">
             <span className="text-gray-400">Total Liabilities</span>
             <span className="font-medium text-white">
-              {"$" + totalLiabilities.toFixed(2)}
+              {"PKR " + totalLiabilities.toFixed(2)}
             </span>
           </div>
           <div className="flex items-center justify-between text-sm mt-2">
             <span className="text-gray-400">Net Worth</span>
             <span className="font-medium text-white">
-              {"$" + netWorth.toFixed(2)}
+              {"PKR " + netWorth.toFixed(2)}
             </span>
           </div>
         </div>
@@ -39,12 +39,12 @@ export default function ZakatSummary({ totalAssets, totalLiabilities }: ZakatSum
           <div className="flex items-center justify-between">
             <span className="text-lg font-medium text-white">Zakat Due</span>
             <span className="text-xl font-bold text-emerald-500">
-              {"$" + zakatDue.toFixed(2)}
+              {"PKR " + zakatDue.toFixed(2)}
             </span>
           </div>
           {netWorth < NISAB_THRESHOLD && (
             <p className="text-sm text-gray-400 mt-2">
-              No Zakat is due as net worth is below Nisab threshold (${NISAB_THRESHOLD}: Equaivalent to 87.48 grams of gold)
+              No Zakat is due as net worth is below Nisab threshold (PKR {NISAB_THRESHOLD}: Equaivalent to 87.48 grams of gold)
             </p>
           )}
         </div>
@@ -67,7 +67,7 @@ export default function ZakatSummary({ totalAssets, totalLiabilities }: ZakatSum
             <div className="ml-3">
               <h3 className="text-sm font-medium text-white">About Zakat</h3>
               <div className="mt-2 text-sm text-gray-400">
-                <p>Zakat is calculated at {ZAKAT_RATE * 100}% of your eligible wealth above the Nisab threshold (${NISAB_THRESHOLD}).</p>
+                <p>Zakat is calculated at {ZAKAT_RATE * 100}% of your eligible wealth above the Nisab threshold (PKR {NISAB_THRESHOLD}).</p>
               </div>
             </div>
           </div>

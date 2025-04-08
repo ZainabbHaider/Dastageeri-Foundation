@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hero from "../AID EASE HARBOUR2.png";
+import hero from "../logo.png";
 
 export default function Hero() {
   return (
