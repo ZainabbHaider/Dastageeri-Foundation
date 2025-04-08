@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import first from "../4.jpg";
+import first from "../4.jpg"; 
 import second from "../39.jpg";
-import third from "../10.jpg";
-import fourth from "../13.jpg";
+import third from "../10.jpg"; 
+import fourth from "../13.jpg"; 
 import fifth from "../32.jpg";
 import sixth from "../33.jpg";
-import seventh from "../23.jpg";
+import seventh from "../23.jpg"; 
 import eighth from "../34.jpg";
 import ninth from "../37.jpg";
 import tenth from "../38.jpg";
@@ -101,7 +101,7 @@ function Section({ id, title, content, images }: SectionProps) {
             <motion.img
               key={index}
               src={src}
-              loading="lazy"
+              
               alt={`${title} ${index + 1}`}
               className="rounded-lg shadow-lg object-cover h-64 w-full hover:scale-105 transition-transform duration-300"
               whileHover={{ scale: 1.05 }}

@@ -2,12 +2,10 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import img15 from '../15.jpg';
 import img3 from '../3.jpg';
-import img35 from '../35.jpg';
 import img16 from '../16.jpg';
 import img1 from '../1.jpg';
 import img5 from '../5.jpg';
 import img19 from '../19.jpg';
-import img36 from '../36.jpg';
 import img14 from '../14.jpg';
 import img21 from '../21.jpg';
 import img22 from '../22.jpg';
@@ -116,7 +114,7 @@ export default function ImageCarousel() {
               <img
                 src={image.url}
                 alt={image.caption}
-                loading='lazy'
+                
                 className="h-full w-full object-cover object-center"
                 // className="h-full w-full object-contain bg-dark-100"
 

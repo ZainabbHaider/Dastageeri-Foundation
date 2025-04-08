@@ -64,7 +64,7 @@ export default function NewsSection() {
                 className="h-48 w-full object-cover"
                 src={item.image}
                 alt={item.title}
-                loading='lazy'
+                
               />
               <div className="p-6">
                 
