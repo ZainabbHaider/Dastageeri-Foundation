@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
-import first from "../assets/12.jpg"
+import first from "../assets/12.webp"
 import second from "../assets/2.jpg"
 import third from "../assets/17.jpg"
 
