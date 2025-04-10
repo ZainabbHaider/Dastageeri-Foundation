@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hero from "../logo.png";
+import hero from "../assets/logo.png";
 
 export default function Hero() {
   return (

@@ -102,7 +102,7 @@ export default function Volunteer() {
                 <Phone className="h-6 w-6 text-emerald-500" />
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-white">Phone</h3>
-                  <p className="mt-1 text-gray-400">+92-3330252800</p>
+                  <p className="mt-1 text-gray-400">+92-333-0252800</p>
                 </div>
               </div>
               <div className="flex items-center">

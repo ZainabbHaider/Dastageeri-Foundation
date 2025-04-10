@@ -40,11 +40,17 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center">
                 <Phone className="h-6 w-6 text-emerald-500 mr-2" />
-                <span className="text-gray-400">+92-3330252800</span>
+                <span className="text-gray-400">+92-333-0252800</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-6 w-6 text-emerald-500 mr-2" />
                 <span className="text-gray-400">dastigeerifoundation@gmail.com</span>
+              </li>
+              <li className="flex items-center">
+                <Instagram className="h-6 w-6 text-emerald-500 mr-2" />
+                <a href="https://www.instagram.com/dastigeerifoundation/" > 
+                <span className="text-gray-400">dastigeerifoundation</span>
+                </a>  
               </li>
             </ul>
           </div>

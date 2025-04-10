@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import img15 from '../15.webp';
-import img3 from '../3.webp';
-import img16 from '../16.webp';
-import img1 from '../1.webp';
-import img5 from '../5.webp';
-import img19 from '../19.webp';
-import img14 from '../14.webp';
-import img21 from '../21.webp';
-import img22 from '../22.webp';
-import img24 from '../24.webp';
-import img25 from '../25.jpg';
-import img26 from '../26.jpg';
-import img27 from '../27.jpg';
+import img15 from '../assets/15.webp';
+import img3 from '../assets/3.webp';
+import img16 from '../assets/16.webp';
+import img1 from '../assets/1.webp';
+import img5 from '../assets/5.webp';
+import img19 from '../assets/19.webp';
+import img14 from '../assets/14.webp';
+import img21 from '../assets/21.webp';
+import img22 from '../assets/22.webp';
+import img24 from '../assets/24.webp';
+import img25 from '../assets/25.jpg';
+import img26 from '../assets/26.jpg';
+import img27 from '../assets/27.jpg';
 
 const images = [
   {
     url: img15,
-    caption: 'Food and Ration Services'
+    caption: 'Food & Ration Services'
   },
   {
     url: img3,
@@ -25,7 +25,7 @@ const images = [
   },
   {
     url: img27,
-    caption: 'Food and Ration Services'
+    caption: 'Food & Ration Services'
   },
   {
     url: img26,
@@ -49,7 +49,7 @@ const images = [
   },
   {
     url: img16,
-    caption: 'Food and Ration Services'
+    caption: 'Food & Ration Services'
   },
   {
     url: img21,
@@ -57,7 +57,7 @@ const images = [
   },
   {
     url: img1,
-    caption: 'Food and Ration Services'
+    caption: 'Food & Ration Services'
   },
   
   {
@@ -72,7 +72,7 @@ const images = [
 
   // {
   //   url: 'src/8.jpg',
-  //   caption: 'Food and Ration Services'
+  //   caption: 'Food & Ration Services'
   // },
   // {
   //   url: 'src/9.jpg',
