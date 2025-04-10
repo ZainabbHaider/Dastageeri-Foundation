@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import first from "../assets/4.jpg"; 
-import second from "../assets/39.jpg";
-import third from "../assets/10.jpg"; 
-import fourth from "../assets/13.jpg"; 
-import fifth from "../assets/32.jpg";
-import sixth from "../assets/33.jpg";
-import seventh from "../assets/23.jpg"; 
-import eighth from "../assets/34.jpg";
-import ninth from "../assets/37.jpg";
-import tenth from "../assets/38.jpg";
+import first from "../assets/4.webp"; 
+import second from "../assets/39.webp";
+import third from "../assets/10.webp"; 
+import fourth from "../assets/13.webp"; 
+import fifth from "../assets/32.webp";
+import sixth from "../assets/33.webp";
+import seventh from "../assets/23.webp"; 
+import eighth from "../assets/34.webp";
+import ninth from "../assets/37.webp";
+import tenth from "../assets/38.webp";
 
 export default function BlogPage() {
   return (

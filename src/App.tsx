@@ -8,6 +8,7 @@ import Zakat from './pages/Zakat';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import Blog from './pages/blog';
+import ScrollToTop from './components/ScrollToTop';
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ function AppRoutes() {
     <div className="min-h-screen bg-dark-100">
       <Navbar />
       <main className="pt-16">
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

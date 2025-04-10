@@ -6,12 +6,12 @@ import { Users, Award, Target } from "lucide-react";
 import Timeline from "../components/Timeline";
 
 // Static imports of images
-import img1 from "../assets/18.jpg";
-import img2 from "../assets/31.jpg";
-import img3 from "../assets/3.jpg";
-import img4 from "../assets/29.jpg";
-import img5 from "../assets/30.jpg";
-import img6 from "../assets/17.jpg";
+import img1 from "../assets/18.webp";
+import img2 from "../assets/40.webp";
+import img3 from "../assets/3.webp";
+import img4 from "../assets/29.webp";
+import img5 from "../assets/30.webp";
+import img6 from "../assets/17.webp";
 
 export default function About() {
   const images = [img1, img2, img3, img4, img5, img6];

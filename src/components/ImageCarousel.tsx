@@ -10,9 +10,9 @@ import img14 from '../assets/14.webp';
 import img21 from '../assets/21.webp';
 import img22 from '../assets/22.webp';
 import img24 from '../assets/24.webp';
-import img25 from '../assets/25.jpg';
-import img26 from '../assets/26.jpg';
-import img27 from '../assets/27.jpg';
+import img25 from '../assets/25.webp';
+import img26 from '../assets/26.webp';
+import img27 from '../assets/27.webp';
 
 const images = [
   {
